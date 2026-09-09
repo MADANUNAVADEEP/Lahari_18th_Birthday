@@ -1,0 +1,1495 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#2b1055,#7597de,#ff9ad5);
+    background-size:300% 300%;
+    animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    text-align:center;
+    color:white;
+    padding:40px;
+}
+
+.intro{
+    font-size:24px;
+    margin-bottom:20px;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+}
+
+.name{
+    font-size:70px;
+    color:#fff;
+    text-shadow:0 0 20px #ffb6ff;
+    margin-bottom:20px;
+
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:1s;
+}
+
+.birthday{
+    font-size:40px;
+    color:#ffe066;
+
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:2s;
+}
+
+.message{
+    font-size:22px;
+    margin-top:20px;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:3s;
+}
+
+button{
+    margin-top:40px;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+
+    background:white;
+    color:#7b2cbf;
+
+    transition:.3s;
+
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:4s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px white;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}   
+/* Celebration Page */
+
+.celebration{
+    text-align:center;
+    color:white;
+    animation:fadeIn 2s;
+}
+
+.celebrate-title{
+    font-size:60px;
+    margin-bottom:25px;
+    text-shadow:0 0 20px #ffffff;
+}
+
+.celebrate-text{
+    font-size:24px;
+    width:70%;
+    margin:auto;
+    line-height:1.8;
+}
+
+.emoji{
+    margin-top:40px;
+    font-size:50px;
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+/* ===== Floating Stars ===== */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.stars span{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+.stars span:nth-child(1){top:10%;left:15%;}
+.stars span:nth-child(2){top:20%;left:80%;}
+.stars span:nth-child(3){top:40%;left:25%;}
+.stars span:nth-child(4){top:70%;left:90%;}
+.stars span:nth-child(5){top:80%;left:10%;}
+.stars span:nth-child(6){top:60%;left:55%;}
+.stars span:nth-child(7){top:30%;left:50%;}
+.stars span:nth-child(8){top:15%;left:60%;}
+
+@keyframes twinkle{
+
+0%,100%{
+opacity:0.3;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+transform:scale(2);
+}
+
+}
+/* =================================
+   MAGICAL GIFT BOX
+   ================================= */
+
+.gift-container {
+    position: relative;
+    width: 150px;
+    height: 130px;
+    margin: 45px auto 10px;
+    cursor: pointer;
+
+    animation: giftFloat 3s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 20px rgba(255, 180, 255, 0.8));
+}
+
+/* Gift Body */
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+
+    width: 130px;
+    height: 90px;
+
+    background: linear-gradient(
+        135deg,
+        #8e44ad,
+        #c77dff
+    );
+
+    border-radius: 8px;
+}
+
+/* Vertical Ribbon */
+
+.vertical-ribbon {
+    position: absolute;
+
+    left: 52px;
+    top: 0;
+
+    width: 26px;
+    height: 90px;
+
+    background: #ffd166;
+}
+
+/* Gift Lid */
+
+.gift-lid {
+    position: absolute;
+
+    top: 25px;
+    left: 0;
+
+    width: 150px;
+    height: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #9b59b6,
+        #d291ff
+    );
+
+    border-radius: 8px;
+
+    z-index: 2;
+}
+
+/* Ribbon on Lid */
+
+.ribbon {
+    position: absolute;
+
+    left: 62px;
+    top: 0;
+
+    width: 26px;
+    height: 30px;
+
+    background: #ffd166;
+}
+
+/* Gift Hover */
+
+.gift-container:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 35px rgba(255, 220, 255, 1));
+}
+
+/* Floating Animation */
+
+@keyframes giftFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+/* Gift Opening Animation */
+
+.gift-container.open .gift-lid {
+    animation: lidOpen 1s forwards;
+}
+
+.gift-container.open {
+    animation: giftDisappear 1.2s forwards;
+}
+
+@keyframes lidOpen {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-70px) rotate(-8deg);
+    }
+}
+
+@keyframes giftDisappear {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+/* Sparkles */
+
+.sparkles {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 24px;
+    animation: sparkleBurst 1.2s ease-out forwards;
+}
+
+@keyframes sparkleBurst {
+
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scale(1.5);
+    }
+
+}
+/* =========================
+   CONFETTI
+   ========================= */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 18px;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+
+}
+/* =================================
+   GALAXY CELEBRATION
+   ================================= */
+
+.galaxy-stars {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.galaxy-stars span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: starTwinkle 3s infinite ease-in-out;
+}
+
+/* Star positions */
+
+.galaxy-stars span:nth-child(1) {
+    top: 10%;
+    left: 15%;
+}
+
+.galaxy-stars span:nth-child(2) {
+    top: 20%;
+    left: 70%;
+}
+
+.galaxy-stars span:nth-child(3) {
+    top: 35%;
+    left: 30%;
+}
+
+.galaxy-stars span:nth-child(4) {
+    top: 60%;
+    left: 80%;
+}
+
+.galaxy-stars span:nth-child(5) {
+    top: 75%;
+    left: 15%;
+}
+
+.galaxy-stars span:nth-child(6) {
+    top: 50%;
+    left: 55%;
+}
+
+.galaxy-stars span:nth-child(7) {
+    top: 15%;
+    left: 45%;
+}
+
+.galaxy-stars span:nth-child(8) {
+    top: 85%;
+    left: 65%;
+}
+
+.galaxy-stars span:nth-child(9) {
+    top: 30%;
+    left: 90%;
+}
+
+.galaxy-stars span:nth-child(10) {
+    top: 70%;
+    left: 40%;
+}
+
+.galaxy-stars span:nth-child(11) {
+    top: 45%;
+    left: 10%;
+}
+
+.galaxy-stars span:nth-child(12) {
+    top: 90%;
+    left: 85%;
+}
+
+.galaxy-stars span:nth-child(13) {
+    top: 25%;
+    left: 55%;
+}
+
+.galaxy-stars span:nth-child(14) {
+    top: 65%;
+    left: 25%;
+}
+
+.galaxy-stars span:nth-child(15) {
+    top: 5%;
+    left: 90%;
+}
+
+.galaxy-stars span:nth-child(16) {
+    top: 80%;
+    left: 50%;
+}
+
+
+/* Star animation */
+
+@keyframes starTwinkle {
+
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(2);
+    }
+
+}
+
+
+/* Moon */
+
+.moon {
+    position: fixed;
+
+    width: 110px;
+    height: 110px;
+
+    top: 8%;
+    right: 10%;
+
+    border-radius: 50%;
+
+    background: #fff4c2;
+
+    box-shadow:
+        0 0 20px #fff4c2,
+        0 0 50px rgba(255, 244, 194, 0.5);
+
+    z-index: 1;
+}
+
+
+/* Celebration Content */
+
+.celebration {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    max-width: 900px;
+
+    padding: 30px;
+
+    animation: celebrationAppear 2s ease forwards;
+}
+
+
+/* Welcome text */
+
+.welcome-line {
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+
+    opacity: 0;
+
+    animation: fadeUp 2s ease forwards;
+}
+
+
+/* Main title */
+
+.celebrate-title {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #c77dff,
+        0 0 50px #c77dff;
+
+    opacity: 0;
+
+    animation: fadeUp 2s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* Lahari */
+
+.lahari-title {
+    font-size: 75px;
+
+    margin-bottom: 25px;
+
+    color: #ffd6ff;
+
+    text-shadow:
+        0 0 15px #ffb6ff,
+        0 0 35px #d896ff,
+        0 0 60px #d896ff;
+
+    opacity: 0;
+
+    animation: fadeUp 2s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* Message */
+
+.celebrate-text {
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    opacity: 0;
+
+    animation: fadeUp 2s ease forwards;
+
+    animation-delay: 3s;
+}
+
+
+/* Birthday emojis */
+
+.birthday-emojis {
+    font-size: 45px;
+
+    margin-top: 35px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 2s ease forwards,
+        emojiFloat 3s ease-in-out infinite;
+
+    animation-delay: 4s, 6s;
+}
+
+
+/* Animations */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes emojiFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes celebrationAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+/* Galaxy background */
+
+body:has(.celebration) {
+    background:
+        radial-gradient(circle at 20% 30%, #4b1b6f, transparent 30%),
+        radial-gradient(circle at 80% 70%, #26114d, transparent 35%),
+        linear-gradient(135deg, #050014, #14002e, #02000b);
+
+    background-size: cover;
+}
+#musicBtn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #7b2cbf;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+
+    z-index: 100;
+}
+
+#musicBtn:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+/* Hide the Galaxy celebration at the beginning */
+
+#confetti-container,
+.galaxy-stars,
+.moon,
+.celebration {
+    display: none;
+}
+/* ================================
+   PERSONAL BIRTHDAY MESSAGE
+   ================================ */
+
+.birthday-message {
+    max-width: 750px;
+    margin: 40px auto 80px;
+    padding: 35px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    box-shadow:
+        0 0 30px rgba(200, 150, 255, 0.25);
+
+    line-height: 1.8;
+}
+
+.birthday-message h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.birthday-message p {
+    font-size: 18px;
+    margin: 18px 0;
+}
+
+.birthday-message h3 {
+    font-size: 27px;
+    margin-top: 30px;
+}
+
+.birthday-message .final-line {
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+/* =================================
+   FRIENDSHIP MESSAGE
+   ================================= */
+
+.friendship-message {
+    display: none;
+
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 40px 35px;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 30px rgba(180, 130, 255, 0.25);
+
+    line-height: 1.8;
+}
+
+.friendship-message .before-birthday {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.friendship-message h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.friendship-message p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.friendship-message strong {
+    font-weight: bold;
+}
+
+.friendship-message .forever-line {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.friendship-message .final-friendship {
+    font-size: 22px;
+    margin-top: 30px;
+}
+/* =================================
+   FIX PAGE SECTIONS
+   ================================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: block !important;
+}
+
+/* Friendship message should occupy the screen */
+.friendship-message {
+    display: none;
+    width: min(850px, 90%);
+    min-height: 70vh;
+    margin: 50px auto;
+    padding: 45px 40px;
+    box-sizing: border-box;
+
+    text-align: center;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 30px rgba(180, 130, 255, 0.25);
+
+    line-height: 1.8;
+}
+
+/* Friendship text */
+.friendship-message .before-birthday {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.friendship-message h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.friendship-message p {
+    font-size: 19px;
+    margin: 20px 0;
+}
+
+.friendship-message .forever-line {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.friendship-message .final-friendship {
+    font-size: 24px;
+    margin-top: 30px;
+}
+/* =================================
+   FRIENDSHIP PAGE - FULL SCREEN
+   ================================= */
+
+.friendship-message {
+    display: none;
+
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    max-width: none !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    padding: 60px 8vw !important;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    z-index: 9999;
+}
+
+/* Friendship heading */
+.friendship-message h2 {
+    font-size: 38px !important;
+    margin: 20px auto 40px !important;
+}
+
+/* Friendship paragraphs */
+.friendship-message p {
+    width: 90% !important;
+    max-width: 900px !important;
+
+    margin: 25px auto !important;
+
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+
+    text-align: center !important;
+}
+
+/* Special ending */
+.friendship-message .forever-line {
+    font-size: 32px !important;
+    font-weight: bold;
+}
+
+.friendship-message .final-friendship {
+    font-size: 26px !important;
+    margin-top: 40px !important;
+}
+/* =========================================
+   FINAL PAGE FIX
+   ========================================= */
+
+/* 1. Hide Dear Lahari birthday message initially */
+.birthday-message {
+    display: none !important;
+}
+
+
+/* 2. Friendship message becomes a completely
+      separate full-screen page */
+.friendship-message {
+    display: none;
+
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 60px 8vw !important;
+
+    box-sizing: border-box !important;
+
+    /* IMPORTANT: solid background */
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #4b1b6f 0%,
+            #16002f 45%,
+            #050014 100%
+        ) !important;
+
+    /* Remove the blur */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    color: white !important;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    /* Put it above everything */
+    z-index: 99999 !important;
+}
+
+
+/* Friendship heading */
+.friendship-message h2 {
+    font-size: 38px !important;
+    margin: 20px auto 40px !important;
+}
+
+
+/* Friendship paragraphs */
+.friendship-message p {
+    width: 90% !important;
+    max-width: 900px !important;
+
+    margin: 25px auto !important;
+
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+
+    text-align: center !important;
+}
+
+
+/* Ending */
+.friendship-message .forever-line {
+    font-size: 32px !important;
+    font-weight: bold !important;
+}
+
+
+.friendship-message .final-friendship {
+    font-size: 26px !important;
+    margin-top: 40px !important;
+}
+/* =========================================
+   FIRST PAGE EMOJIS - BELOW GIFT MESSAGE
+   ========================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Gift stays above the instruction */
+.container .gift-container {
+    margin: 20px auto 5px;
+}
+
+/* Click message */
+.container .gift-instruction {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Cake, stars, heart, flower, balloon, gift */
+.container .emoji {
+    margin-top: 10px;
+    font-size: 40px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    position: relative;
+    z-index: 10;
+}
+/* =================================
+   FRIENDSHIP MESSAGE - PAGE 2
+   ================================= */
+
+.friendship-message {
+    display: none;
+
+    min-height: 100vh;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 50px 10%;
+    margin: 0;
+
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #35105c,
+        #12001f,
+        #21003b
+    );
+
+    position: relative;
+    z-index: 100;
+
+    overflow-y: auto;
+}
+
+/* Small heading */
+.friendship-message .before-birthday {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Dear Bangaruuu */
+.friendship-message h2 {
+    font-size: 48px;
+    margin-bottom: 45px;
+
+    text-shadow:
+        0 0 10px #ffffff,
+        0 0 25px #d88cff;
+}
+
+/* Normal paragraphs */
+.friendship-message p {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    font-size: 22px;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+/* Important thank-you section */
+.friendship-message strong {
+    font-weight: bold;
+}
+
+/* Till the very end */
+.friendship-message .forever-line {
+    font-size: 32px;
+    font-weight: bold;
+
+    margin-top: 50px;
+
+    text-shadow:
+        0 0 10px #ff4d8d,
+        0 0 20px #ff4d8d;
+}
+
+/* Final friendship message */
+.friendship-message .final-friendship {
+    font-size: 28px;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+.friendship-message .final-friendship strong {
+    font-size: 34px;
+}
+/* =================================
+   BIRTHDAY CONTINUE BUTTON
+   ================================= */
+
+.birthday-button {
+    display: block;
+    margin: 50px auto 80px;
+
+    padding: 16px 32px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: white;
+    background: linear-gradient(135deg, #9b4dff, #ff4d8d);
+
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(190, 100, 255, 0.6),
+        0 0 30px rgba(255, 80, 150, 0.3);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.birthday-button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(220, 120, 255, 0.9),
+        0 0 40px rgba(255, 80, 150, 0.6);
+}
+
+.birthday-button:active {
+    transform: scale(0.96);
+}
+/* =========================================
+   PAGE VISIBILITY CONTROL
+   ========================================= */
+
+/* PAGE 1 - visible when website opens */
+#welcomePage {
+    display: block;
+}
+
+/* PAGE 2 - hidden initially */
+#friendshipPage {
+    display: none !important;
+}
+
+/* PAGE 3 - hidden initially */
+#birthdayPage {
+    display: none !important;
+}
+
+
+/* =========================================
+   WHEN PAGE 2 IS OPEN
+   ========================================= */
+
+body.friendship-open #welcomePage {
+    display: none !important;
+}
+
+body.friendship-open #friendshipPage {
+    display: block !important;
+}
+
+body.friendship-open #birthdayPage {
+    display: none !important;
+}
+
+
+/* =========================================
+   WHEN PAGE 3 IS OPEN
+   ========================================= */
+
+body.birthday-open #welcomePage {
+    display: none !important;
+}
+
+body.birthday-open #friendshipPage {
+    display: none !important;
+}
+
+body.birthday-open #birthdayPage {
+    display: block !important;
+}
+
+/* =========================================
+   PAGE 4 - PHOTO MEMORIES
+   ========================================= */
+
+.photo-page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top,
+        #3b1b5a,
+        #14051f 55%,
+        #050008);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* TITLE */
+
+.photo-title {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    color: #ffd6f9;
+
+    text-shadow:
+        0 0 10px #ff8ee8,
+        0 0 20px #ff5fd7;
+}
+
+
+.photo-subtitle {
+    font-size: 17px;
+    margin-bottom: 30px;
+
+    color: #f5d9f2;
+}
+
+
+/* =========================================
+   PHOTO SLIDESHOW
+   ========================================= */
+
+.photo-slideshow {
+    position: relative;
+
+    width: min(90vw, 650px);
+    height: min(65vh, 500px);
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* PHOTOS */
+.memory-photo {
+    position: absolute;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px rgba(255, 150, 240, 0.5),
+        0 0 50px rgba(180, 80, 255, 0.3);
+
+    opacity: 0;
+
+    transform: scale(0.95);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.memory-photo.active-photo {
+    display: block;
+}
+
+
+/* ACTIVE PHOTO */
+
+.memory-photo.active-photo {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================================
+   BOTTOM MESSAGE
+   ========================================= */
+
+.photo-message {
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    color: #ffd6f9;
+
+    text-shadow:
+        0 0 10px rgba(255, 150, 240, 0.8);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+.photo-page {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+}
+
+/* Surprise button on right side */
+#photoSurpriseButton {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+/* =========================================
+   PAGE 5 - ONE LAST SURPRISE
+   Hidden until final birthday page is finished
+   ========================================= */
+
+.last-surprise-page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #210038, #090014);
+    color: white;
+}
+
+.last-surprise-page.show {
+    display: block;
+}
+
+.last-surprise-small {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.last-surprise-title {
+    font-size: 55px;
+    color: #ffb6f9;
+    text-shadow: 0 0 20px #ff69d9;
+    margin-bottom: 20px;
+}
+
+.last-surprise-text,
+.mystery-text {
+    font-size: 24px;
+    margin: 15px;
+}
+
+.final-gift {
+    margin: 45px auto 20px;
+    width: 170px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.final-gift:hover {
+    transform: scale(1.08);
+}
+
+.final-gift-lid {
+    background: #d68cff;
+    border-radius: 15px 15px 5px 5px;
+    padding: 15px;
+    font-size: 40px;
+}
+
+.final-gift-box {
+    background: #a94de8;
+    border-radius: 5px 5px 18px 18px;
+    padding: 35px 20px;
+    font-size: 75px;
+    box-shadow: 0 0 30px rgba(255, 120, 255, 0.7);
+}
+
+.open-gift-text {
+    font-size: 20px;
+}
+
+.secret-message {
+    display: none;
+    max-width: 700px;
+    margin: 35px auto;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 30px rgba(255, 120, 255, 0.4);
+}
+
+.secret-message.show {
+    display: block;
+}
+
+.secret-message h2 {
+    color: #ff9bea;
+    font-size: 32px;
+}
+
+.secret-message p {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.real-surprise {
+    color: #ffb6f9;
+    font-weight: bold;
+}
